@@ -22,21 +22,21 @@ ctx.moveTo(margin, margin + hl * 2);
 ctx.lineTo(w - margin, margin + hl * 2);
 ctx.stroke();
 
-const x = 1;
-const y = 1;
-const centerX = w / 2 + x * wl;
-const centerY = h / 2 + y * hl;
-const radius = wl * 0.4;
+function check(x,y){
+    const centerX = w / 2 + x * wl;
+    const centerY = h / 2 + y * hl;
+    const radius = wl * 0.4;
 
-ctx.beginPath();
-ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
-ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+    ctx.stroke();
 
-const size = wl * 0.8;
+    const size = wl * 0.8;
 
-ctx.beginPath();
-ctx.moveTo(centerX - size / 2, centerY - size /2);
-ctx.lineTo(centerX + size / 2, centerY + size /2);
-ctx.moveTo(centerX + size / 2, centerY - size /2);
-ctx.lineTo(centerX - size / 2, centerY + size /2);
-ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(centerX - size / 2, centerY - size /2);
+    ctx.lineTo(centerX + size / 2, centerY + size /2);
+    ctx.moveTo(centerX + size / 2, centerY - size /2);
+    ctx.lineTo(centerX - size / 2, centerY + size /2);
+    ctx.stroke();
+}
