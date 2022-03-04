@@ -21,3 +21,13 @@ ctx.lineTo(w - margin, margin + hl);
 ctx.moveTo(margin, margin + hl * 2);
 ctx.lineTo(w - margin, margin + hl * 2);
 ctx.stroke();
+
+const x = 0;
+const y = 0;
+const centerX = w / 2;
+const centerY = h / 2;
+const radius = wl * 0.4;
+
+ctx.beginPath();
+ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+ctx.stroke();
