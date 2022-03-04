@@ -22,10 +22,10 @@ ctx.moveTo(margin, margin + hl * 2);
 ctx.lineTo(w - margin, margin + hl * 2);
 ctx.stroke();
 
-const x = 0;
-const y = 0;
-const centerX = w / 2;
-const centerY = h / 2;
+const x = 1;
+const y = 1;
+const centerX = w / 2 + x * wl;
+const centerY = h / 2 + y * hl;
 const radius = wl * 0.4;
 
 ctx.beginPath();
