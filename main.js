@@ -75,18 +75,14 @@ canvas.addEventListener('click', (e) => {
         if (maru ) {
           check('maru', x - 1, y - 1);
           maru = false;
+          checked[y][x] = "maru";
         } else {
           check('batsu', x - 1, y - 1);
           maru = true;
+          checked[y][x] = "batsu";
         }
-        checked[y][x] = true;
+        console.log(checked);
       }
     })
   })
-})
-
-const fruits = ['dragon', 'apple', 'banana']
-
-fruits.forEach((f) => {
-  console.log(f)
 })
