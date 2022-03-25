@@ -1,3 +1,7 @@
+const result = document.getElementById('result');
+const resultText = document.createTextNode("");
+result.appendChild(resultText);
+
 const canvas = document.getElementById('game')
 const ctx = canvas.getContext('2d')
 const w = 500
@@ -57,8 +61,14 @@ const checked = [
     [false, false, false],
     [false, false, false]
 ];
+let gameover = false;
+let win = null;
 
 canvas.addEventListener('click', (e) => {
+  if(gameover){
+    return;
+  }
+
   console.log(`x: ${e.clientX} y: ${e.clientY}`)
   xs.forEach((x, index) => {
     ys.forEach((y, index2) => {
@@ -124,6 +134,30 @@ canvas.addEventListener('click', (e) => {
         }
         console.log(`naname : ${naname}`);
 
+        if( tateHantei || yokoHantei || naname ){
+          gameover = true;
+          if(maru){
+            win = "maru";
+          }else{
+            win = "batsu";
+          }
+        }
+
+        if( checked.map(l=>l.every(a=>a)).every(a=>a) ){
+          gameover = true;
+        }
+        console.log(`gameover : ${gameover}`);
+        console.log(`win : ${win}`);
+
+        if(gameover){
+          if(win == "maru"){
+            resultText.data = "まるの勝ち";
+          }else if(win == "batsu"){
+            resultText.data = "ばつの勝ち";
+          }else{
+            resultText.data = "ひきわけ";
+          }
+        }
 
         maru = !maru;
         console.log(checked);
