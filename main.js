@@ -45,8 +45,8 @@ function check(mark, x, y) {
     }
 }
 
-let xs = [0, 1, 2];
-let ys = [0, 1, 2];
+const xs = [0, 1, 2];
+const ys = [0, 1, 2];
 const x1s = xs.map((x) => margin + x * wl);
 const x2s = xs.map((x) => margin + (x + 1) * wl );
 const y1s = ys.map((y) => margin + y * hl);
@@ -62,3 +62,10 @@ canvas.addEventListener("click", (e) => {
         });
     });
 });
+
+const fruits = ["dragon", "apple", "banana"];
+
+fruits.forEach((f)=>{
+    console.log(f);
+});
+
