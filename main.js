@@ -80,6 +80,51 @@ canvas.addEventListener('click', (e) => {
           checked[y][x] = "batsu";
         }
 
+        let yokoHantei = true;
+        for(let i = 0; i < 3; i++){
+          if(!yokoHantei){
+            break;
+          }
+          if(maru){
+            yokoHantei = checked[y][i] == "maru";
+          }else{
+            yokoHantei = checked[y][i] == "batsu";
+          }
+        }
+        console.log(`yokoHantei : ${yokoHantei}`);
+
+        let tateHantei = true;
+        for(let i = 0; i < 3; i++){
+          if(!tateHantei){
+            break;
+          }
+          if(maru){
+            tateHantei = checked[i][x] == "maru";
+          }else{
+            tateHantei = checked[i][x] == "batsu";
+          }
+        }
+        console.log(`tateHantei : ${tateHantei}`);
+
+        let naname = true;
+        if(maru){
+          naname = checked[1][1] == "maru"
+          && ( 
+            (checked[0][0] == "maru" && checked[2][2] == "maru")
+            ||
+            (checked[0][2] == "maru" && checked[2][0] == "maru")
+          );
+        }else{
+          naname = checked[1][1] == "batsu"
+          && ( 
+            (checked[0][0] == "batsu" && checked[2][2] == "batsu")
+            ||
+            (checked[0][2] == "batsu" && checked[2][0] == "batsu")
+          );
+        }
+        console.log(`naname : ${naname}`);
+
+
         maru = !maru;
         console.log(checked);
       }
